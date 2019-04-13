@@ -1,15 +1,9 @@
-import discord, logging, json, asyncio, time, random, aiohttp, re, datetime, traceback, os, sys, math, asyncpg
+import discord, json, asyncio, time, random, aiohttp, re, os, sys, math, asyncpg
 from time import gmtime
 from discord.ext import commands
 
 #-------------------DATA---------------------
-bot = commands.Bot(command_prefix='>', description=None)
-message = discord.Message
-server = discord.Server
-member = discord.Member
-user = discord.User
-permissions = discord.Permissions
-PRserver = "Private Server"
+bot = commands.Bot(command_prefix='p!', description=None)
 LogRoom = bot.get_channel(id="401752340366884885")
 underworking = ":warning: **Meh, this command hasn't finished, but planned. Please wait until it's got.** :warning:"
 disabled = "**:no_entry_sign: Command disabled!**"
