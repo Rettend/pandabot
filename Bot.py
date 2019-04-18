@@ -3,14 +3,14 @@ from time import gmtime
 from discord.ext import commands
 
 #-------------------DATA---------------------
-bot = commands.Bot(command_prefix='p!', description=None)
+bot = discord.Client()
 prefix = "p!"
-LogRoom = bot.get_channel(id="568344705616707585")
+LogRoom = bot.get_channel(id=568344705616707585)
 underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
 bot.remove_command("help")
 """timer = time.strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())"""
-Botserver = bot.get_guild(id="566647658324819968")
+Botserver = bot.get_guild(id=56647658324819968)
 
 #-----------------SETUP----------------------
 @bot.event
@@ -51,7 +51,7 @@ async def suggest(ctx, pref=None, *, text=None):
             em.set_author(name=ctx.message.author, icon_url=ctx.message.author.avatar_url)
             timer = time.strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
             em.set_footer(text=timer)
-            channel = bot.get_channel(id="568344705616707585")
+            channel = bot.get_channel(id=568344705616707585)
             await bot.send_message(ctx.message.channel, f"**:white_check_mark: Sent in {channel.mention}**")
             mesg = await bot.send_message(channel, embed=em)
             if pref is "S":
@@ -91,7 +91,7 @@ async def ban(ctx, user : discord.User=None, Day : int=None, *, Reason=None):
             await bot.say("**I wont let you ban yourself xD**")
         else:
             room = ctx.message.channel
-            await bot.ban(user, delete_message_days=Day)
+            await user.ban(delete_message_days=Day)
             await bot.say(f"**{user.mention} got banned by {ctx.message.author.mention} for __{Reason}__\nSee the logs in {LogRoom.mention}**")
             em = discord.Embed(title="BAN", description=None, colour=0xad1457)
             em.add_field(name="User", value=f"{user.mention}")
