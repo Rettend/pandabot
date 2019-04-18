@@ -10,7 +10,7 @@ underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
 bot.remove_command("help")
 """timer = time.strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())"""
-Botserver = bot.get_server(id="566647658324819968")
+Botserver = bot.get_guild(id="566647658324819968")
 
 #-----------------SETUP----------------------
 @bot.event
