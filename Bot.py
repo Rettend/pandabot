@@ -432,7 +432,7 @@ async def bot(ctx):
     awaitctx.send(embed=em)
 
 #-----------------------------------------------
-@client.event
+"""@client.event
 async def on_message(message):
     if message.content.startswith(f"{prefix} + mod"):
         em = discord.Embed(title="MODERATION COMMANDS", description=None, colour=0x3498db)
@@ -485,7 +485,7 @@ async def on_message(message):
                                                               '**Very doubtful :8ball:**',
                                                               '**Ha! :8ball:**',
                                                               '**Not today man, not today :8ball:**']))
-    await client.process_commands(message) #IMPORTANT
+    await client.process_commands(message) #IMPORTANT"""
 
       
 token = os.environ.get('DISCORD_TOKEN')
