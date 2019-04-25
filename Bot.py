@@ -396,11 +396,11 @@ async def game(*, play=None):
         await ctx.send(embed=em)
 
 @bot.command(pass_context=True)
-async def nick(ctx, Reason=None, *, name=None):
+async def nick(ctx, *, name=None):
     if name is None:
         await ctx.send("**The usage is `p!nick {Reason: optional} {Something to set as your name}`**")
     else:
-        await ctx.message.author.edit(nick=name reason=Reason)
+        await ctx.message.author.edit(nick=name)
         em = discord.Embed(title="Nickname", description=f"{ctx.message.author}'s nick set to __{name}__!", colour=0x3498db)
         await ctx.send(embed=em)
 
