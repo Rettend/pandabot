@@ -15,7 +15,7 @@ Botserver = client.get_guild(id=56647658324819968)
 @client.event
 async def on_ready():
     print("Ready\n>>>")
-    await client.change_presence(status=discord.Status.dnd, game=discord.Game(name='yeaa boii'))
+    await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name='yeaa boii'))
 
 #----------------COMMANDS--------------------
 @commands.cooldown(1, 60, commands.BucketType.user) 
