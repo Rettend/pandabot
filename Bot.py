@@ -3,12 +3,11 @@ from time import gmtime
 from discord.ext import commands
 
 #-------------------DATA---------------------
-bot = commands.Bot(command_prefix='p!')
+bot = commands.Bot(command_prefix="p!", description=None, help_command=None)
 client = discord.Client()
 LogRoom = client.get_channel(id=568344705616707585)
 underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
-client.remove_command("help")
 """timer = time.strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())"""
 Botserver = client.get_guild(id=56647658324819968)
 
