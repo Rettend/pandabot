@@ -4,6 +4,7 @@ from discord.ext import commands
 
 #-------------------DATA---------------------
 bot = commands.Bot(command_prefix='p!')
+client = discord.Client()
 LogRoom = bot.get_channel(id=568344705616707585)
 underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
@@ -434,7 +435,7 @@ async def bot(ctx):
     awaitctx.send(embed=em)
 
 #-----------------------------------------------
-@bot.event
+@client.event
 async def on_message(message):
     if message.content.startswith(f"{prefix} + mod"):
         em = discord.Embed(title="MODERATION COMMANDS", description=None, colour=0x3498db)
