@@ -15,10 +15,7 @@ Botserver = bot.get_guild(id=56647658324819968)
 #-----------------SETUP----------------------
 @client.event
 async def on_ready():
-    print("Logged in as")
-    print(bot.user.name)
-    print(bot.user.id)
-    print(">>")
+    print("Ready\n>>>")
     await bot.change_presence(status=discord.Status.dnd, game=discord.Game(name='yeaa boii'))
 
 #----------------COMMANDS--------------------
