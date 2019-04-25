@@ -3,19 +3,20 @@ from time import gmtime
 from discord.ext import commands
 
 #-------------------DATA---------------------
-bot = commands.Bot(command_prefix='p!'), discord.Client()
-LogRoom = bot.get_channel(id=568344705616707585)
+bot = commands.Bot(command_prefix='p!')
+client = discord.Client()
+LogRoom = client.get_channel(id=568344705616707585)
 underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
-bot.remove_command("help")
+client.remove_command("help")
 """timer = time.strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())"""
-Botserver = bot.get_guild(id=56647658324819968)
+Botserver = client.get_guild(id=56647658324819968)
 
 #-----------------SETUP----------------------
-@bot.event
+@client.event
 async def on_ready():
     print("Ready\n>>>")
-    await bot.change_presence(status=discord.Status.dnd, game=discord.Game(name='yeaa boii'))
+    await client.change_presence(status=discord.Status.dnd, game=discord.Game(name='yeaa boii'))
 
 #----------------COMMANDS--------------------
 @commands.cooldown(1, 60, commands.BucketType.user) 
@@ -431,7 +432,7 @@ async def bot(ctx):
     awaitctx.send(embed=em)
 
 #-----------------------------------------------
-@bot.event
+@client.event
 async def on_message(message):
     if message.content.startswith(f"{prefix} + mod"):
         em = discord.Embed(title="MODERATION COMMANDS", description=None, colour=0x3498db)
@@ -488,4 +489,4 @@ async def on_message(message):
 
       
 token = os.environ.get('DISCORD_TOKEN')
-bot.run(token)
+client.run(token)
