@@ -13,7 +13,7 @@ bot.remove_command("help")
 Botserver = bot.get_guild(id=56647658324819968)
 
 #-----------------SETUP----------------------
-@bot.event
+@client.event
 async def on_ready():
     print("Logged in as")
     print(bot.user.name)
@@ -492,4 +492,4 @@ async def on_message(message):
 
       
 token = os.environ.get('DISCORD_TOKEN')
-bot.run(token)
+client.run(token)
