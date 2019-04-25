@@ -20,7 +20,7 @@ async def on_ready():
 
 #----------------COMMANDS--------------------
 @commands.cooldown(1, 60, commands.BucketType.user) 
-@client.command(pass_context=True)
+@bot.command(pass_context=True)
 async def suggest(ctx, pref=None, *, text=None):
     if pref is None:
         await ctx.send("**The usage is `p!suggest {prefix (Q, S, C, B)} {text}`**")
