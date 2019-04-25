@@ -485,7 +485,7 @@ async def on_message(message):
                                                               '**Very doubtful :8ball:**',
                                                               '**Ha! :8ball:**',
                                                               '**Not today man, not today :8ball:**']))
-    await bot.process_commands(message) #IMPORTANT
+    await client.process_commands(message) #IMPORTANT
 
       
 token = os.environ.get('DISCORD_TOKEN')
