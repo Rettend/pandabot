@@ -3,8 +3,7 @@ from time import gmtime
 from discord.ext import commands
 
 #-------------------DATA---------------------
-bot = commands.Bot(command_prefix='p!')
-client = discord.Client()
+bot = commands.Bot(command_prefix='p!'), discord.Client()
 LogRoom = bot.get_channel(id=568344705616707585)
 underworking = ":warning: **This command isn't finished.** :warning:"
 disabled = "**:no_entry_sign: Command disabled! :no_entry_sign:**"
@@ -13,7 +12,7 @@ bot.remove_command("help")
 Botserver = bot.get_guild(id=56647658324819968)
 
 #-----------------SETUP----------------------
-@client.event
+@bot.event
 async def on_ready():
     print("Ready\n>>>")
     await bot.change_presence(status=discord.Status.dnd, game=discord.Game(name='yeaa boii'))
@@ -432,7 +431,7 @@ async def bot(ctx):
     awaitctx.send(embed=em)
 
 #-----------------------------------------------
-@client.event
+@bot.event
 async def on_message(message):
     if message.content.startswith(f"{prefix} + mod"):
         em = discord.Embed(title="MODERATION COMMANDS", description=None, colour=0x3498db)
@@ -489,4 +488,4 @@ async def on_message(message):
 
       
 token = os.environ.get('DISCORD_TOKEN')
-client.run(token)
+bot.run(token)
